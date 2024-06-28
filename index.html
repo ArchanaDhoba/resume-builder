@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div id="introPage">
+        <div class="intro-content">
+            <h1>Welcome to the Resume Builder</h1>
+            <p>Create a professional resume effortlessly with our easy-to-use resume builder.</p>
+            <button onclick="showResumeForm()">Create Resume</button>
+        </div>
+    </div>
+
+    <div id="resumeFormPage" style="display:none;">
+        <header>
+            <h1>Resume Builder</h1>
+        </header>
+        <main>
+            <form id="resumeForm">
+                <div class="section">
+                    <h2>Personal Information</h2>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                    <label for="linkedin">LinkedIn:</label>
+                    <input type="text" id="linkedin" name="linkedin">
+                </div>
+                <div class="section">
+                    <h2>Summary</h2>
+                    <textarea id="summary" name="summary" placeholder="Brief about you..."></textarea>
+                </div>
+                <div class="section">
+                    <h2>Experience</h2>
+                    <textarea id="experience" name="experience" placeholder="Your experience..."></textarea>
+                </div>
+                <div class="section">
+                    <h2>Education</h2>
+                    <label for="schooling">Schooling:</label>
+                    <textarea id="schooling" name="schooling" placeholder="Your schooling..."></textarea>
+                    <label for="higherEducation">Higher Education:</label>
+                    <textarea id="higherEducation" name="higherEducation" placeholder="Your higher education..."></textarea>
+                    <label for="graduation">Graduation:</label>
+                    <textarea id="graduation" name="graduation" placeholder="Your graduation..."></textarea>
+                </div>
+                <div class="section">
+                    <h2>Key Achievements</h2>
+                    <textarea id="achievements" name="achievements" placeholder="Your achievements..."></textarea>
+                </div>
+                <div class="section">
+                    <h2>Skills</h2>
+                    <textarea id="skills" name="skills" placeholder="Your skills..."></textarea>
+                </div>
+                <div class="section">
+                    <h2>Languages</h2>
+                    <textarea id="languages" name="languages" placeholder="Languages you know..."></textarea>
+                </div>
+                <div class="buttons">
+                    <button type="button" onclick="previewResume()">Preview Resume</button>
+                    <button type="button" onclick="downloadResumeAsPDF()">Download Resume</button>
+                </div>
+            </form>
+            <section id="resumePreview" class="slide-preview">
+                <div class="slide-content">
+                    <span class="close-slide" onclick="closePreview()">&times;</span>
+                    <h2>Resume Preview</h2>
+                    <div id="previewContent"></div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Professional Resume Builder</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
